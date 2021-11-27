@@ -52,7 +52,11 @@ def execute_statement():
     )
 
     # Ensure that a 2XX status code was returned
-    resp.raise_for_status()
+    try:
+        resp.raise_for_status()
+    except:
+        print(f"failed to create connector: {json.dumps(resp.json())}")
+        exit(1)
 
 
 if __name__ == "__main__":

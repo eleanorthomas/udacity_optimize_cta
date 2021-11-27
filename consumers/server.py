@@ -68,7 +68,7 @@ def run_server():
             offset_earliest=True,
         ),
         KafkaConsumer(
-            "org.chicago.cta.stations.table.v1",
+            "chicago.transformed_stations",
             lines.process_message,
             offset_earliest=True,
             is_avro=False,

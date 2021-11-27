@@ -18,13 +18,13 @@ CREATE TABLE turnstile (
     station_name VARCHAR,
     line VARCHAR
 ) WITH (
-    kafka_topic="cta.turnstile",
-    value_format="avro",
-    key="station_id"
+    kafka_topic='cta.turnstile',
+    value_format='avro',
+    key='station_id'
 );
 
 CREATE TABLE turnstile_summary
-WITH (value_format="json") AS
+WITH (value_format='json') AS
     SELECT
         station_id,
         count(station_id) AS count

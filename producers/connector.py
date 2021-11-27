@@ -48,8 +48,7 @@ def configure_connector():
     )
 
     ## Ensure a healthy response was given
-    try:
-        resp.raise_for_status()
+    resp.raise_for_status()
 
     logging.debug("connector created successfully")
 

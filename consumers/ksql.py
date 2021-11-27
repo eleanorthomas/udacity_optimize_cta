@@ -55,7 +55,7 @@ def execute_statement():
     try:
         resp.raise_for_status()
     except:
-        print(f"failed to create connector: {json.dumps(resp.json())}")
+        print(f"error with KSQL: {json.dumps(resp.json())}")
         exit(1)
 
 

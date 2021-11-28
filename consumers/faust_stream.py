@@ -34,7 +34,7 @@ class TransformedStation(faust.Record):
 app = faust.App("stations-stream", broker="kafka://localhost:9092", store="memory://")
 
 # Input Kafka Topic
-topic = app.topic("cta.station", value_type=Station)
+topic = app.topic("cta.stations", value_type=Station)
 # Output Kafka Topic
 out_topic = app.topic("cta.station.transformed_stations", partitions=1)
 # Define a Faust Table
